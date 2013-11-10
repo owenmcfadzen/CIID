@@ -5,7 +5,7 @@ This sketch creates a 3D grid that is manipulated by the sound waves of a music 
 
 #### Controls:
 
-- ##### Move the camera with the arrow keys.
-- ##### W = Zoom In.
-- ##### S = Zoom Out.
-- ##### R = Export PDF of current scene.
+- Move the camera with the arrow keys.
+- W = Zoom In.
+- S = Zoom Out.
+- R = Export PDF of current scene.
