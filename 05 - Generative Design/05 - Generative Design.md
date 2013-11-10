@@ -15,7 +15,6 @@ Moment Obscure was a project for a generative design class taught at CIID. We we
 
 ####Links:
 - [HemeshGui](https://code.google.com/p/amnonp5/)
-- [HemeshGui](https://code.google.com/p/amnonp5/)
 
 ####Inspiration Links:
 - [Mings Realm](http://mingsrealm.blogspot.dk/)
