@@ -1,16 +1,14 @@
 import ddf.minim.*;
 import ddf.minim.analysis.*;
 
-
 Minim minim;
 AudioInput mic;
 FFT fft;  
-//Sounds
+//Audiotracks
 AudioPlayer streetNoise;
 AudioPlayer rickshawNoise;
 AudioPlayer storm;
 AudioPlayer prayer;
-
 
 PImage img;
 
@@ -18,9 +16,9 @@ float vol;
 
 void setup() {
   size(1200, 400);
-  img = loadImage("indiaStreet.png");
+  //Load Background Streetscape
+  img = loadImage("indiaStreet.png");//taken from http://www.wonobo.com/explore/bangalore/9.603713311921303E7$6.2271406685253955E7$44.28899999999993$6.900000000000002
   background(img);
-
 
   //Sounds
   minim = new Minim(this);
@@ -29,20 +27,19 @@ void setup() {
   rickshawNoise = minim.loadFile("rickshawNoise.mp3");
   storm = minim.loadFile("storm.mp3");
   prayer = minim.loadFile("prayer.mp3");
-
   //normalize rickshawNoise
   rickshawNoise.setGain(-10);
 
-  
+  //Analysing
+  //in = minim.getLineIn(Minim.STEREO, 512);
+  //fft = new FFT(mic.bufferSize(), mic.sampleRate());
 }
 
 
 void draw () {
   background(0);
-  noStroke();
 
-  
-
+  //Soundscaping
   vol = map(mouseX, 0, width, -10, 14);
   rickshawNoise.setGain(vol);
   vol = map(mouseX, 0, width, 14, -1);
@@ -56,9 +53,18 @@ void draw () {
     vol = map(mouseX, width/2, width, 10, -10);
     prayer.setGain(vol);
   }
+
+  //Graphics Treatment
+  noStroke();
+  
+  //Rectangle 1
+  color c = img.get(255, 200);
+  fill(c);
+  rect(0, 0, 200, height);
 }
 
 void mousePressed() {
+  //Start all audio
   streetNoise.play();
   rickshawNoise.play();
   storm.play();
