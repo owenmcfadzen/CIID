@@ -48,19 +48,38 @@ void draw () {
   if (mouseX < width/2) {
     vol = map(mouseX, 0, width/2, -10, 10);
     prayer.setGain(vol);
-  }
-  else if (mouseX > width/2) {
+  } else if (mouseX > width/2) {
     vol = map(mouseX, width/2, width, 10, -10);
     prayer.setGain(vol);
   }
 
   //Graphics Treatment
   noStroke();
-  
+
   //Rectangle 1
   color c = img.get(255, 200);
   fill(c);
   rect(0, 0, 200, height);
+
+  c = img.get(300, 200);
+  fill(c);
+  rect(200, 0, 200, height);
+
+  c = img.get(500, 200);
+  fill(c);
+  rect(400, 0, 200, height);
+
+  c = img.get(650, 200);
+  fill(c);
+  rect(600, 0, 200, height);
+
+  c = img.get(800, 200);
+  fill(c);
+  rect(800, 0, 200, height);
+
+  c = img.get(1000, 200);
+  fill(c);
+  rect(1000, 0, 200, height);
 }
 
 void mousePressed() {
